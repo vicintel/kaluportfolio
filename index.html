@@ -149,6 +149,22 @@
     /* ── About ── */
     #about { background: var(--surface); }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-photo-wrap {
+      position: relative; width: 260px; margin: 0 auto 2rem;
+    }
+    .about-photo-wrap::before {
+      content: ''; position: absolute;
+      inset: -4px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      z-index: 0;
+    }
+    .about-photo {
+      position: relative; z-index: 1;
+      width: 100%; border-radius: 10px;
+      display: block; object-fit: cover;
+      aspect-ratio: 3/4;
+      filter: grayscale(10%);
+    }
     .about-text p { color: var(--muted); margin-bottom: 1rem; }
     .about-info { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.5rem; }
     .info-item { display: flex; gap: 1rem; align-items: baseline; }
@@ -405,6 +421,9 @@
     <div class="section-line"></div>
     <div class="about-grid fade-in">
       <div class="about-text">
+        <div class="about-photo-wrap">
+          <img src="profile.jpg" alt="Onyedikachi Kalu Sunday" class="about-photo" />
+        </div>
         <p>
           I am a results-driven Security Engineer passionate about transforming theoretical knowledge
           into practical, impactful solutions. With hands-on experience in cloud security, vulnerability
